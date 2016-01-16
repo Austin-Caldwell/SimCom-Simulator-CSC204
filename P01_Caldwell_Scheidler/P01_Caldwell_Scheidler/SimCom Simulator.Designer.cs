@@ -96,7 +96,7 @@
             this.progTextBox.Location = new System.Drawing.Point(12, 72);
             this.progTextBox.Name = "progTextBox";
             this.progTextBox.ReadOnly = true;
-            this.progTextBox.Size = new System.Drawing.Size(400, 400);
+            this.progTextBox.Size = new System.Drawing.Size(304, 400);
             this.progTextBox.TabIndex = 1;
             this.progTextBox.Text = "";
             // 
