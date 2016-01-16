@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assembly
+namespace P01_Caldwell_Scheidler
 {
     public class Assembly
     {
-
         public string Label { get; set; }
         public string Opcode { get; set; }
         public string Variable { get; set; }
@@ -19,6 +18,5 @@ namespace Assembly
             Opcode = opc;
             Variable = var;
         }
-        
     }
 }

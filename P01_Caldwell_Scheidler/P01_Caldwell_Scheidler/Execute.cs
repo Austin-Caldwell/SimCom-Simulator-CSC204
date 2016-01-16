@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assembly
+namespace P01_Caldwell_Scheidler
 {
     public class Execute
     {
-
         public void Main(ref int[] mem, int x, ref int instruct_val, ref int r, ref bool gt, ref bool lt, ref bool eq)
         {
             switch (instruct_val)
@@ -35,7 +34,7 @@ namespace Assembly
                     Decrement(ref mem, x);
                     break;
                 case 7:
-                    Compare(mem, x, r, ref gt, ref lt, ref eq)
+                    Compare(mem, x, r, ref gt, ref lt, ref eq);
                     break;
                 case 8:
                     Jump(x, ref instruct_val);
@@ -186,9 +185,9 @@ namespace Assembly
         }
 
         //output a value from memory location x to user
-        private void Out(int[] mem, int x)
+        private string Out(int[] mem, int x)
         {
-            outputbox.Value = mem[x].ToString;
+            return mem[x].ToString();   // CHANGED!
         }
 
         //end program

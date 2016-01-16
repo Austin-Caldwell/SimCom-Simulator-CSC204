@@ -29,7 +29,7 @@ namespace P01_Caldwell_Scheidler
             if (fileChosen == DialogResult.OK)
             {
                 StreamReader textReader = new StreamReader(openTextFileDialog.FileName);
-                //List<Assembly> AssemText = new List<Assembly>();
+                List<Assembly> AssemText = new List<Assembly>();
 
                 while ((progLine = textReader.ReadLine()) != null)
                 {
@@ -68,9 +68,13 @@ namespace P01_Caldwell_Scheidler
 
             foreach (string s in itemList)    // Go through items in list, looking only for text desired
             {
-                if (s.Equals(' ') || s.Equals('\t')) // Do not save any items in array that are a SPACE or TAB
+                if (s.Equals(" ") || s.Equals("\t")) // Do not save any items in array that are a SPACE or TAB
                 {
                     itemList.Remove(s);
+                }
+                else if (s.Equals(""))
+                {
+                    ;
                 }
                 else
                 {
@@ -80,6 +84,11 @@ namespace P01_Caldwell_Scheidler
                     //
                 }
                 //AssemText.Add(new Assembly());
+
+                //foreach (string x in itemList)
+                //{
+
+                //}
             }
         }
     }

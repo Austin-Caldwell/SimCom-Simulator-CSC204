@@ -35,6 +35,8 @@
             this.openTextFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.lblProg = new System.Windows.Forms.Label();
             this.progTextBox = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.varTextBox = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,11 +102,31 @@
             this.progTextBox.TabIndex = 1;
             this.progTextBox.Text = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 479);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Variables:";
+            // 
+            // varTextBox
+            // 
+            this.varTextBox.Location = new System.Drawing.Point(12, 503);
+            this.varTextBox.Name = "varTextBox";
+            this.varTextBox.ReadOnly = true;
+            this.varTextBox.Size = new System.Drawing.Size(304, 218);
+            this.varTextBox.TabIndex = 4;
+            this.varTextBox.Text = "";
+            // 
             // SimComSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.varTextBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblProg);
             this.Controls.Add(this.progTextBox);
             this.Controls.Add(this.menuStrip1);
@@ -129,6 +151,8 @@
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.Label lblProg;
         private System.Windows.Forms.RichTextBox progTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox varTextBox;
     }
 }
 

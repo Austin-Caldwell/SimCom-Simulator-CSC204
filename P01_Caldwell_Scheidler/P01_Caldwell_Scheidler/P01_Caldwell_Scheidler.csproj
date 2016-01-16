@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assembly.cs" />
+    <Compile Include="Convert.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="Execute.cs" />
+    <Compile Include="Instruction.cs" />
+    <Compile Include="Label.cs" />
     <Compile Include="SimCom Simulator.cs">
       <SubType>Form</SubType>
     </Compile>
