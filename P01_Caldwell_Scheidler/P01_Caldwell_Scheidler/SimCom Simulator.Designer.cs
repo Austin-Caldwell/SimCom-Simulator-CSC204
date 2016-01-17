@@ -98,14 +98,14 @@
             this.progTextBox.Location = new System.Drawing.Point(12, 72);
             this.progTextBox.Name = "progTextBox";
             this.progTextBox.ReadOnly = true;
-            this.progTextBox.Size = new System.Drawing.Size(304, 400);
+            this.progTextBox.Size = new System.Drawing.Size(304, 334);
             this.progTextBox.TabIndex = 1;
             this.progTextBox.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 479);
+            this.label1.Location = new System.Drawing.Point(12, 409);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 3;
@@ -113,10 +113,10 @@
             // 
             // varTextBox
             // 
-            this.varTextBox.Location = new System.Drawing.Point(12, 503);
+            this.varTextBox.Location = new System.Drawing.Point(12, 432);
             this.varTextBox.Name = "varTextBox";
             this.varTextBox.ReadOnly = true;
-            this.varTextBox.Size = new System.Drawing.Size(304, 218);
+            this.varTextBox.Size = new System.Drawing.Size(304, 158);
             this.varTextBox.TabIndex = 4;
             this.varTextBox.Text = "";
             // 
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.ClientSize = new System.Drawing.Size(1354, 602);
             this.Controls.Add(this.varTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblProg);

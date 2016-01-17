@@ -25,6 +25,7 @@ namespace P01_Caldwell_Scheidler
             fileChosen = openTextFileDialog.ShowDialog();
             string progLine;
             string parsedProgram = "";
+            string parsedData = "";
             int lineNumber = 0;
 
             try
@@ -33,13 +34,14 @@ namespace P01_Caldwell_Scheidler
                 {
                     StreamReader textReader = new StreamReader(openTextFileDialog.FileName);
                     List<Assembly> AssemText = new List<Assembly>();
+                    List<Data> DataText = new List<Data>();
 
                     while ((progLine = textReader.ReadLine()) != null)
                     {
                         if (!progLine.StartsWith("."))  // Line of Program Contains NO Preprocessor Directive
                         {
                             string[] revisedProgLineItems;
-                            revisedProgLineItems = Parser(progLine);        // Pass in for parsing the current line of the program being read
+                            revisedProgLineItems = Parser(progLine);    // Pass in for parsing the current line of the program being read
 
                             if (revisedProgLineItems.Length == 3)   // If the program line has label (or empty label), opcode, and variable
                             {
@@ -54,14 +56,17 @@ namespace P01_Caldwell_Scheidler
                         }
                         else if (progLine.StartsWith(".DATA"))  // Line of Program is a .DATA Preprocessor Directive
                         {
-                            //VariableParser(progLine);
+                            string[] revisedProgLineDataItems;
+                            revisedProgLineDataItems = VariableParser(progLine);    // Pass in for parsing the current .DATA line of the program being read
+
+                            DataText.Add(new Data(revisedProgLineDataItems[1], int.Parse(revisedProgLineDataItems[2])));
                         }
                         else { }    // Line of Program is a Preprocessor Directive or Error
                     }
 
                     // For Debugging Purposes ********
                     StreamReader testRead = new StreamReader(openTextFileDialog.FileName);
-                    MessageBox.Show(testRead.ReadToEnd());
+                    MessageBox.Show("Program Selected:\n" + testRead.ReadToEnd());
                     // *******************************
 
                     textReader.Close();
@@ -71,7 +76,13 @@ namespace P01_Caldwell_Scheidler
                         parsedProgram += (a.Label + "\t" + a.Opcode + "\t" + a.Variable + "\n");    // Format labels, opcodes, and variables from Assembly objects for display
                     }
 
-                    progTextBox.Text = parsedProgram;   // Display parsed program in text box on screen
+                    foreach (Data d in DataText)
+                    {
+                        parsedData += (d.Name + "\t" + d.Value.ToString() + "\n");      // Format names and values from Data objects for display
+                    }
+
+                    progTextBox.Text = parsedProgram;   // Display parsed program in Program text box on form
+                    varTextBox.Text = parsedData;       // Display parsed .DATA information in Variables text box on form
                 }
                 else
                 {
@@ -89,22 +100,22 @@ namespace P01_Caldwell_Scheidler
             Application.Exit();
         }
 
-        private string[] Parser(string progLine)    // Referencing http://stackoverflow.com/questions/858756/how-to-parse-a-text-file-with-c-sharp - Samir Talwar
+        private string[] Parser(string progLine)    // Use to parse lines which do NOT start with a "." - Referencing http://stackoverflow.com/questions/858756/how-to-parse-a-text-file-with-c-sharp - Samir Talwar
         {
             string[] progLineItems = progLine.Split('\t', ' ');
             List<string> itemList = progLineItems.ToList();     // Convert the string array to a list of strings
 
             foreach (string s in itemList)    // Go through items in list, looking only for text desired
             {
-                if (s.Equals(" ") || s.Equals("\t")) // Do not save any items in array that are a SPACE or TAB
+                if (s.Equals(" ") || s.Equals("\t")) // Do not save any items in array that are a SPACE or TAB; replace with empty string
                 {
                     itemList.Remove(s);
                 }
                 else
                 {
                     // For Debugging Purposes *****
-                    MessageBox.Show(s);
-                    progTextBox.Text += (s + " ");
+                    //MessageBox.Show(s);
+                    //progTextBox.Text += (s + " ");
                     // ****************************
                 }
             }
@@ -114,11 +125,29 @@ namespace P01_Caldwell_Scheidler
             return revisedProgLineItems;    // Return the string array
         }
 
-        private string[] VariableParser(string progLine)
+        private string[] VariableParser(string progLine)    // Use to parse lines starting with .DATA
         {
             string[] progLineDataItems = progLine.Split('\t', ' ');
+            List<string> dataList = progLineDataItems.ToList();     // Convert the string array to a list of strings
 
-            return progLineDataItems;
+            foreach (string s in dataList)    // Go through items in list, looking only for text desired
+            {
+                if (s.Equals(" ") || s.Equals("\t")) // Do not save any items in array that are a SPACE or TAB; replace with empty string
+                {
+                    dataList.Remove(s);
+                }
+                else
+                {
+                    // For Debugging Purposes *****
+                    //MessageBox.Show(s + " is text related to a DATA ITEM");
+                    //varTextBox.Text += (s + "\n");
+                    // ****************************
+                }
+            }
+
+            string[] revisedProgLineDataItems = dataList.ToArray();     // Convert list of strings back into string array for use in calling function
+
+            return revisedProgLineDataItems;   // Return the string array for .DATA items
         }
     }
 }
