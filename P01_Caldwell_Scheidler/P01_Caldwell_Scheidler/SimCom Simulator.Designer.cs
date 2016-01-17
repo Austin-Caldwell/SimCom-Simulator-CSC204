@@ -37,6 +37,7 @@
             this.progTextBox = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.varTextBox = new System.Windows.Forms.RichTextBox();
+            this.openFileHelpProvider = new System.Windows.Forms.HelpProvider();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,11 +57,13 @@
             // 
             // openTextFileToolStripMenuItem
             // 
+            this.openTextFileToolStripMenuItem.AutoToolTip = true;
             this.openTextFileToolStripMenuItem.BackColor = System.Drawing.Color.Yellow;
             this.openTextFileToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2);
             this.openTextFileToolStripMenuItem.Name = "openTextFileToolStripMenuItem";
             this.openTextFileToolStripMenuItem.Size = new System.Drawing.Size(118, 25);
             this.openTextFileToolStripMenuItem.Text = "Open Text File";
+            this.openTextFileToolStripMenuItem.ToolTipText = "Click to select a file to load a program from.";
             this.openTextFileToolStripMenuItem.Click += new System.EventHandler(this.openTextFileToolStripMenuItem_Click);
             // 
             // compileToolStripMenuItem
@@ -89,9 +92,9 @@
             this.lblProg.AutoSize = true;
             this.lblProg.Location = new System.Drawing.Point(12, 49);
             this.lblProg.Name = "lblProg";
-            this.lblProg.Size = new System.Drawing.Size(137, 20);
+            this.lblProg.Size = new System.Drawing.Size(73, 20);
             this.lblProg.TabIndex = 2;
-            this.lblProg.Text = "Program Running:";
+            this.lblProg.Text = "Program:";
             // 
             // progTextBox
             // 
@@ -120,6 +123,11 @@
             this.varTextBox.TabIndex = 4;
             this.varTextBox.Text = "";
             // 
+            // openFileHelpProvider
+            // 
+            this.openFileHelpProvider.HelpNamespace = "C:\\Users\\Austin\\Documents\\GitHub\\SimCom-Simulator-CSC204\\P01_Caldwell_Scheidler\\O" +
+    "pen Text File Help.txt";
+            // 
             // SimComSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -131,9 +139,11 @@
             this.Controls.Add(this.progTextBox);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SimComSimulator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SimCom Simulator - Caldwell & Scheidler 2016";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -153,6 +163,7 @@
         private System.Windows.Forms.RichTextBox progTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox varTextBox;
+        private System.Windows.Forms.HelpProvider openFileHelpProvider;
     }
 }
 

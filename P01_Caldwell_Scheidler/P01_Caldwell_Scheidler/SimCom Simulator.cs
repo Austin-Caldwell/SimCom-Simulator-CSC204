@@ -86,7 +86,7 @@ namespace P01_Caldwell_Scheidler
                 }
                 else
                 {
-                    MessageBox.Show("Unable to open specified file.  Please try again.");
+                    MessageBox.Show("Please select a file to open.");
                 }
             }
             catch (Exception ex)    // Show error if unable to open file specified or parser error
