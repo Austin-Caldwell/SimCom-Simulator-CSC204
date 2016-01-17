@@ -24,36 +24,64 @@ namespace P01_Caldwell_Scheidler
             DialogResult fileChosen;
             fileChosen = openTextFileDialog.ShowDialog();
             string progLine;
+            string parsedProgram = "";
             int lineNumber = 0;
 
-            if (fileChosen == DialogResult.OK)
+            try
             {
-                StreamReader textReader = new StreamReader(openTextFileDialog.FileName);
-                List<Assembly> AssemText = new List<Assembly>();
-
-                while ((progLine = textReader.ReadLine()) != null)
+                if (fileChosen == DialogResult.OK)
                 {
-                    if (!progLine.StartsWith("."))  // Line of Program Contains NO Preprocessor Directive
-                    {
-                        Parser(progLine);
-                        lineNumber++;       // Count line of actual program code
-                    }
-                    else if (progLine.StartsWith(".DATA"))  // Line of Program is a .DATA Preprocessor Directive
-                    {
+                    StreamReader textReader = new StreamReader(openTextFileDialog.FileName);
+                    List<Assembly> AssemText = new List<Assembly>();
 
+                    while ((progLine = textReader.ReadLine()) != null)
+                    {
+                        if (!progLine.StartsWith("."))  // Line of Program Contains NO Preprocessor Directive
+                        {
+                            string[] revisedProgLineItems;
+                            revisedProgLineItems = Parser(progLine);        // Pass in for parsing the current line of the program being read
+
+                            if (revisedProgLineItems.Length == 3)   // If the program line has label (or empty label), opcode, and variable
+                            {
+                                AssemText.Add(new Assembly(revisedProgLineItems[0], revisedProgLineItems[1], revisedProgLineItems[2]));
+                            }
+                            else  // If the program line has label (or empty label) and opcode, but no variable
+                            {
+                                AssemText.Add(new Assembly(revisedProgLineItems[0], revisedProgLineItems[1], ""));
+                            }
+
+                            lineNumber++;               // Count line of actual program code
+                        }
+                        else if (progLine.StartsWith(".DATA"))  // Line of Program is a .DATA Preprocessor Directive
+                        {
+                            //VariableParser(progLine);
+                        }
+                        else { }    // Line of Program is a Preprocessor Directive or Error
                     }
-                    else { }    // Line of Program is a Preprocessor Directive or Error
+
+                    // For Debugging Purposes ********
+                    StreamReader testRead = new StreamReader(openTextFileDialog.FileName);
+                    MessageBox.Show(testRead.ReadToEnd());
+                    // *******************************
+
+                    textReader.Close();
+
+                    foreach (Assembly a in AssemText)
+                    {
+                        parsedProgram += (a.Label + "\t" + a.Opcode + "\t" + a.Variable + "\n");    // Format labels, opcodes, and variables from Assembly objects for display
+                    }
+
+                    progTextBox.Text = parsedProgram;   // Display parsed program in text box on screen
                 }
-
-                // For Debugging Purposes
-                StreamReader testRead = new StreamReader(openTextFileDialog.FileName);
-                MessageBox.Show(testRead.ReadToEnd());
-                //
-
-                textReader.Close();
-                progTextBox.Text = File.ReadAllText(openTextFileDialog.FileName);
+                else
+                {
+                    MessageBox.Show("Unable to open specified file.  Please try again.");
+                }
             }
-
+            catch (Exception ex)    // Show error if unable to open file specified or parser error
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,10 +89,10 @@ namespace P01_Caldwell_Scheidler
             Application.Exit();
         }
 
-        private void Parser(string progLine)    // Referencing http://stackoverflow.com/questions/858756/how-to-parse-a-text-file-with-c-sharp - Samir Talwar
+        private string[] Parser(string progLine)    // Referencing http://stackoverflow.com/questions/858756/how-to-parse-a-text-file-with-c-sharp - Samir Talwar
         {
-            string[] items = progLine.Split('\t', ' ');
-            List<string> itemList = items.ToList();     // Convert the string array to a list of strings
+            string[] progLineItems = progLine.Split('\t', ' ');
+            List<string> itemList = progLineItems.ToList();     // Convert the string array to a list of strings
 
             foreach (string s in itemList)    // Go through items in list, looking only for text desired
             {
@@ -72,24 +100,25 @@ namespace P01_Caldwell_Scheidler
                 {
                     itemList.Remove(s);
                 }
-                else if (s.Equals(""))
-                {
-                    ;
-                }
                 else
                 {
-                    // For Debugging Purposes
+                    // For Debugging Purposes *****
                     MessageBox.Show(s);
-                    progTextBox.Text += s;
-                    //
+                    progTextBox.Text += (s + " ");
+                    // ****************************
                 }
-                //AssemText.Add(new Assembly());
-
-                //foreach (string x in itemList)
-                //{
-
-                //}
             }
+
+            string[] revisedProgLineItems = itemList.ToArray();     // Convert list of strings back into string array for use in calling function
+
+            return revisedProgLineItems;    // Return the string array
+        }
+
+        private string[] VariableParser(string progLine)
+        {
+            string[] progLineDataItems = progLine.Split('\t', ' ');
+
+            return progLineDataItems;
         }
     }
 }

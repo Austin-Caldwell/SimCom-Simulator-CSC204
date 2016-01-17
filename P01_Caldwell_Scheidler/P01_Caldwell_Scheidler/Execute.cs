@@ -1,4 +1,5 @@
-﻿using System;
+﻿// CSC 204 P01 - Austin Caldwell and Joshua Scheidler - 2016
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
