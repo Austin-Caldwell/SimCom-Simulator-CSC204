@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimComSimulator));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openTextFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,7 +39,7 @@
             this.progTextBox = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.varTextBox = new System.Windows.Forms.RichTextBox();
-            this.openFileHelpProvider = new System.Windows.Forms.HelpProvider();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +100,9 @@
             // 
             // progTextBox
             // 
+            this.progTextBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.progTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progTextBox.ForeColor = System.Drawing.SystemColors.Info;
             this.progTextBox.Location = new System.Drawing.Point(12, 72);
             this.progTextBox.Name = "progTextBox";
             this.progTextBox.ReadOnly = true;
@@ -116,6 +121,8 @@
             // 
             // varTextBox
             // 
+            this.varTextBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.varTextBox.ForeColor = System.Drawing.SystemColors.Info;
             this.varTextBox.Location = new System.Drawing.Point(12, 432);
             this.varTextBox.Name = "varTextBox";
             this.varTextBox.ReadOnly = true;
@@ -123,23 +130,30 @@
             this.varTextBox.TabIndex = 4;
             this.varTextBox.Text = "";
             // 
-            // openFileHelpProvider
+            // notifyIcon1
             // 
-            this.openFileHelpProvider.HelpNamespace = "C:\\Users\\Austin\\Documents\\GitHub\\SimCom-Simulator-CSC204\\P01_Caldwell_Scheidler\\O" +
-    "pen Text File Help.txt";
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipText = "SimCom Simulator - Caldwell & Scheidler 2016";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "SimCom Simulator";
+            this.notifyIcon1.Visible = true;
             // 
             // SimComSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::P01_Caldwell_Scheidler.Properties.Resources.Desktop_Computer;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1354, 602);
             this.Controls.Add(this.varTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblProg);
             this.Controls.Add(this.progTextBox);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SimComSimulator";
@@ -163,7 +177,7 @@
         private System.Windows.Forms.RichTextBox progTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox varTextBox;
-        private System.Windows.Forms.HelpProvider openFileHelpProvider;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
