@@ -92,18 +92,19 @@
             // lblProg
             // 
             this.lblProg.AutoSize = true;
-            this.lblProg.Location = new System.Drawing.Point(12, 49);
+            this.lblProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProg.Location = new System.Drawing.Point(125, 49);
             this.lblProg.Name = "lblProg";
-            this.lblProg.Size = new System.Drawing.Size(73, 20);
+            this.lblProg.Size = new System.Drawing.Size(81, 20);
             this.lblProg.TabIndex = 2;
             this.lblProg.Text = "Program:";
             // 
             // progTextBox
             // 
-            this.progTextBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.progTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.progTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.progTextBox.ForeColor = System.Drawing.SystemColors.Info;
-            this.progTextBox.Location = new System.Drawing.Point(12, 72);
+            this.progTextBox.Location = new System.Drawing.Point(243, 49);
             this.progTextBox.Name = "progTextBox";
             this.progTextBox.ReadOnly = true;
             this.progTextBox.Size = new System.Drawing.Size(304, 334);
@@ -113,20 +114,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 409);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(117, 405);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Variables:";
             // 
             // varTextBox
             // 
-            this.varTextBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.varTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.varTextBox.ForeColor = System.Drawing.SystemColors.Info;
-            this.varTextBox.Location = new System.Drawing.Point(12, 432);
+            this.varTextBox.Location = new System.Drawing.Point(243, 405);
             this.varTextBox.Name = "varTextBox";
             this.varTextBox.ReadOnly = true;
-            this.varTextBox.Size = new System.Drawing.Size(304, 158);
+            this.varTextBox.Size = new System.Drawing.Size(304, 175);
             this.varTextBox.TabIndex = 4;
             this.varTextBox.Text = "";
             // 
@@ -142,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::P01_Caldwell_Scheidler.Properties.Resources.Desktop_Computer;
+            this.BackgroundImage = global::P01_Caldwell_Scheidler.Properties.Resources.Computer_Monitor;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1354, 602);
             this.Controls.Add(this.varTextBox);

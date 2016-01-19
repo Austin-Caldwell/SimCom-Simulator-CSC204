@@ -1,0 +1,7 @@
+.BEGIN
+Start:	
+
+.DATA
+.DATA
+.DATA
+.END
