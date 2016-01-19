@@ -35,24 +35,34 @@ namespace P01_Caldwell_Scheidler
                     StreamReader textReader = new StreamReader(openTextFileDialog.FileName);
                     List<Assembly> AssemText = new List<Assembly>();
                     List<Data> DataText = new List<Data>();
+                    List<Label> Labels = new List<Label>();
 
                     while ((progLine = textReader.ReadLine()) != null)
                     {
                         if (!progLine.StartsWith("."))  // Line of Program Contains NO Preprocessor Directive
                         {
+                            lineNumber++;               // Count line of actual program code
                             string[] revisedProgLineItems;
                             revisedProgLineItems = Parser(progLine);    // Pass in for parsing the current line of the program being read
 
-                            if (revisedProgLineItems.Length == 3)   // If the program line has label (or empty label), opcode, and variable
+                            if (revisedProgLineItems.Length == 3)       // If the program line has label (or empty label), opcode, and variable
                             {
                                 AssemText.Add(new Assembly(revisedProgLineItems[0], revisedProgLineItems[1], revisedProgLineItems[2]));
+                                if (revisedProgLineItems[0] != "")      // If there is a meaninful label for the line, add that label and line number to the list of labels
+                                {
+                                    Labels.Add(new Label(revisedProgLineItems[0], lineNumber));
+                                }
+                                else { }        // If no meaningful label, do nothing and move on to next line of program
                             }
                             else  // If the program line has label (or empty label) and opcode, but no variable
                             {
                                 AssemText.Add(new Assembly(revisedProgLineItems[0], revisedProgLineItems[1], ""));
+                                if (revisedProgLineItems[0] != "")      // If there is a meaninful label for the line, add that label and line number to the list of labels
+                                {
+                                    Labels.Add(new Label(revisedProgLineItems[0], lineNumber));
+                                }
+                                else { }        // If no meaningful label, do nothing and move on to next line of program
                             }
-
-                            lineNumber++;               // Count line of actual program code
                         }
                         else if (progLine.StartsWith(".DATA"))  // Line of Program is a .DATA Preprocessor Directive
                         {
@@ -83,6 +93,15 @@ namespace P01_Caldwell_Scheidler
 
                     progTextBox.Text = parsedProgram;   // Display parsed program in Program text box on form
                     varTextBox.Text = parsedData;       // Display parsed .DATA information in Variables text box on form
+
+                    // For Debugging Purposes ********
+                    string labelsToPrint = "";
+                    foreach (var x in Labels)
+                    {
+                        labelsToPrint += "Label Name: " + x.Name + " - " + "Label Line #: " + x.Value + "\n";
+                    }
+                    MessageBox.Show(labelsToPrint);
+                    // *******************************
                 }
                 else
                 {
