@@ -64,7 +64,7 @@ namespace P01_Caldwell_Scheidler
                                 else { }        // If no meaningful label, do nothing and move on to next line of program
                             }
                         }
-                        else if (progLine.StartsWith(".DATA"))  // Line of Program is a .DATA Preprocessor Directive
+                        else if (progLine.StartsWith(".DATA") || progLine.StartsWith(".Data") || progLine.StartsWith(".data"))  // Line of Program is a .DATA Preprocessor Directive
                         {
                             string[] revisedProgLineDataItems;
                             revisedProgLineDataItems = VariableParser(progLine);    // Pass in for parsing the current .DATA line of the program being read
