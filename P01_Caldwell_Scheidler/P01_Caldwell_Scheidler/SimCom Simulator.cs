@@ -111,6 +111,7 @@ namespace P01_Caldwell_Scheidler
                         labelsToPrint += "Label Name: " + x.Name + " - " + "Label Line #: " + x.Value + "\n";
                     }
                     MessageBox.Show(labelsToPrint);
+                    MessageBox.Show("Program has compiled!");
                     // *******************************
                 }
                 else

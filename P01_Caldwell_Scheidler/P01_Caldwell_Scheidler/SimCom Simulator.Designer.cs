@@ -61,8 +61,8 @@
             this.openTextFileToolStripMenuItem.BackColor = System.Drawing.Color.Yellow;
             this.openTextFileToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2);
             this.openTextFileToolStripMenuItem.Name = "openTextFileToolStripMenuItem";
-            this.openTextFileToolStripMenuItem.Size = new System.Drawing.Size(118, 25);
-            this.openTextFileToolStripMenuItem.Text = "Open Text File";
+            this.openTextFileToolStripMenuItem.Size = new System.Drawing.Size(197, 25);
+            this.openTextFileToolStripMenuItem.Text = "Open && Compile Text File";
             this.openTextFileToolStripMenuItem.ToolTipText = "Click to select a file to load a program from.";
             this.openTextFileToolStripMenuItem.Click += new System.EventHandler(this.openTextFileToolStripMenuItem_Click);
             // 
