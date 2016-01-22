@@ -54,6 +54,16 @@ namespace P01_Caldwell_Scheidler
                                 }
                                 else { }        // If no meaningful label, do nothing and move on to next line of program
                             }
+                            else if (revisedProgLineItems.Length == 1 && revisedProgLineItems[0] != "" && !revisedProgLineItems[0].Contains(':'))
+                            {
+                                // Program line has no label, no space/tab before opcode, and no variable
+                                AssemText.Add(new Assembly("", revisedProgLineItems[0], ""));
+                            }
+                            else if (revisedProgLineItems[0] != "" && !revisedProgLineItems[0].Contains(':'))
+                            {
+                                // Program line has no label and no space/tab before opcode
+                                AssemText.Add(new Assembly("", revisedProgLineItems[0], revisedProgLineItems[1]));
+                            }
                             else  // If the program line has label (or empty label) and opcode, but no variable
                             {
                                 AssemText.Add(new Assembly(revisedProgLineItems[0], revisedProgLineItems[1], ""));
@@ -61,7 +71,7 @@ namespace P01_Caldwell_Scheidler
                                 {
                                     Labels.Add(new Label(revisedProgLineItems[0], lineNumber));
                                 }
-                                else { }        // If no meaningful label, do nothing and move on to next line of program
+                                else { }    // If no meaningful label, do nothing and move on to next line of program
                             }
                         }
                         else if (progLine.StartsWith(".DATA") || progLine.StartsWith(".Data") || progLine.StartsWith(".data"))  // Line of Program is a .DATA Preprocessor Directive

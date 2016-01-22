@@ -85,9 +85,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Desktop Computer.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Computer Monitor.png" />
     <Content Include="Resources\Desktop Computer FavIcon.ico" />
   </ItemGroup>

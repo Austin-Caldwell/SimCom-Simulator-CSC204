@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimComSimulator));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openTextFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.compileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openTextFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.lblProg = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openTextFileToolStripMenuItem,
-            this.compileToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -67,14 +65,6 @@
             this.openTextFileToolStripMenuItem.Text = "Open Text File";
             this.openTextFileToolStripMenuItem.ToolTipText = "Click to select a file to load a program from.";
             this.openTextFileToolStripMenuItem.Click += new System.EventHandler(this.openTextFileToolStripMenuItem_Click);
-            // 
-            // compileToolStripMenuItem
-            // 
-            this.compileToolStripMenuItem.BackColor = System.Drawing.Color.Yellow;
-            this.compileToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2);
-            this.compileToolStripMenuItem.Name = "compileToolStripMenuItem";
-            this.compileToolStripMenuItem.Size = new System.Drawing.Size(80, 25);
-            this.compileToolStripMenuItem.Text = "Compile";
             // 
             // quitToolStripMenuItem
             // 
@@ -172,7 +162,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem openTextFileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem compileToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openTextFileDialog;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.Label lblProg;

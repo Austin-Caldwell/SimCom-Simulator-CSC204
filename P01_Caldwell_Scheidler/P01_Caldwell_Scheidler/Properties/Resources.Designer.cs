@@ -69,15 +69,5 @@ namespace P01_Caldwell_Scheidler.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Desktop_Computer {
-            get {
-                object obj = ResourceManager.GetObject("Desktop Computer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
