@@ -1,0 +1,28 @@
+.Begin
+Loop1: in a
+increment a
+in b
+load a
+Compare: compare b
+jumpneq loop1
+Final: halt
+LOOP2:	OUT	LIMIT
+	DECREMENT	LIMIT
+	LOAD	LIMIT
+	COMPARE	ZERO
+	JUMPGT	LOOP2
+	HALT
+Loop3: in x
+ increment x
+ in y
+ load x
+ compare y
+ jumpneq loop3
+ halt
+.Data a 6
+.Data b 10
+.DATA	LIMIT	4
+.DATA	ZERO	0
+.Data x 1
+.Data y 2
+.End

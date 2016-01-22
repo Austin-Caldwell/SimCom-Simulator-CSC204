@@ -1,0 +1,11 @@
+.Begin
+Loop: in a
+increment a
+in b
+load a
+Compare: compare b
+jumpneq loop
+Final: halt
+.Data a 6
+.Data b 10
+.End

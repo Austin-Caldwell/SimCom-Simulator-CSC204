@@ -1,0 +1,11 @@
+.Begin
+Loop: in x
+ increment x
+ in y
+ load x
+Compare: compare y
+ jumpneq loop
+Final: halt
+.Data x 1
+.Data y 2
+.End
