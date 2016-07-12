@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace P01_Caldwell_Scheidler
 {
@@ -43,7 +44,12 @@ namespace P01_Caldwell_Scheidler
                         {
                             lineNumber++;               // Count line of actual program code
                             string[] revisedProgLineItems;
-                            revisedProgLineItems = Parser(progLine);    // Pass in for parsing the current line of the program being read
+
+                            // Edit the string so that all leading/trailing whitespaces are removed and any whitespace characters between the code parts are replaced by a single whitespace character
+                            string progLineTrimmed = progLine.Trim();
+                            string progLineNormalized = Regex.Replace(progLineTrimmed, @"(\s)\s+", "$1");   // Thanks to F.B. ten Kate on http://stackoverflow.com/questions/206717/how-do-i-replace-multiple-spaces-with-a-single-space-in-c
+
+                            revisedProgLineItems = Parser(progLineNormalized);    // Pass in for parsing the current line of the program being read
 
                             if (revisedProgLineItems.Length == 3)       // If the program line has label (or empty label), opcode, and variable
                             {

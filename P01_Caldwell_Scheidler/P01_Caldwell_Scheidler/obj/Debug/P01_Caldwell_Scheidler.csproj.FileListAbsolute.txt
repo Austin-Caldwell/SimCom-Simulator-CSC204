@@ -16,3 +16,11 @@ C:\Users\Austin\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\
 C:\Users\Austin\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\bin\Debug\P01_Caldwell_Scheidler.exe
 C:\Users\Austin\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\bin\Debug\P01_Caldwell_Scheidler.pdb
 C:\Users\Austin\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\obj\Debug\P01_Caldwell_Scheidler.pdb
+C:\Users\acald\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\bin\Debug\P01_Caldwell_Scheidler.exe.config
+C:\Users\acald\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\obj\Debug\P01_Caldwell_Scheidler.exe
+C:\Users\acald\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\obj\Debug\P01_Caldwell_Scheidler.pdb
+C:\Users\acald\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\bin\Debug\P01_Caldwell_Scheidler.exe
+C:\Users\acald\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\bin\Debug\P01_Caldwell_Scheidler.pdb
+C:\Users\acald\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\obj\Debug\P01_Caldwell_Scheidler.SimComSimulator.resources
+C:\Users\acald\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\obj\Debug\P01_Caldwell_Scheidler.Properties.Resources.resources
+C:\Users\acald\Documents\GitHub\SimCom-Simulator-CSC204\P01_Caldwell_Scheidler\P01_Caldwell_Scheidler\obj\Debug\P01_Caldwell_Scheidler.csproj.GenerateResource.Cache
